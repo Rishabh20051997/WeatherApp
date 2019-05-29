@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="/WebServer/src/App/App.js" ></script>
+
+</head>
+<body>
+
+{{!--<!--{{>partialviewname}}     used to display partial view -->--}}
+    
+<h1>{{title}}</h1> 
+
+<form>
+    <input type="text">
+    <input type="submit" >
+</form>
+
+</body>
+
+
+
+<script>
+    console.log('client side javascript loaded')
+
+
+var weatherform =document.querySelector('form')
+
+weatherform.addEventListener('submit',(e)=>{
+    e.preventDefault();  //prevent refresh
+
+    fetch('http://localhost:3000/help').then((response)=>
+{
+    console.log("fetch response is "+response);
+})
+
+
+    console.log("Testing")
+})
+</script>
+</html>
